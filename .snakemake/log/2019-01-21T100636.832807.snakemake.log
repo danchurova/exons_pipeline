@@ -1,0 +1,4 @@
+Building DAG of jobs...
+WildcardError in line 32 of /Users/danchurova/Documents/PROJECTS/NMD_project/exon_psi_KD/exons_pipeline/Snakefile:
+Wildcards in input files cannot be determined from output files:
+'sample'

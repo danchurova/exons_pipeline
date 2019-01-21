@@ -29,3 +29,11 @@ rule calculate_p:
   shell:
     "python3 calculate_p.py < {input} > {output}"
 
+rule calculate_new_p:
+  input:
+    "snakemake_res/exons_genes_{sample}.bed"
+  output:
+    "snakemake_res/exons_genes_psi_new_p_{sample}.bed"
+  shell:
+    "python3 calculate_p_new.py < {input} > {output}"
+

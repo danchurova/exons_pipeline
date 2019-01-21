@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 '''
+old version
 this script callculate p (p= (a-x)/(y-x)-(b-a)+1) for each exon
 '''
 
