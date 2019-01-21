@@ -8,16 +8,16 @@ rule filter_exons_psi:
   input:
     "input_data/{sample}.gff"
   output:
-    temp("snakemake_res/exons_psi_{sample}.bed")
+    "snakemake_res/exons_psi_{sample}.bed"
   shell:
     "python3 filter_exons_psi.py < {input} > {output}"
 
 rule assign_exons_to_genes:
   input:
-    a="input_data//genes_unique.bed",
+    a="input_data/genes_unique.bed",
     b="snakemake_res/exons_psi_{sample}.bed"
   output:
-    temp("snakemake_res/exons_genes_{sample}.bed")
+    "snakemake_res/exons_genes_{sample}.bed"
   shell:
     "bedtools intersect -wa -wb -a {input.a} -b {input.b} -s -header > {output}"
 

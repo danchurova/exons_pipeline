@@ -1,0 +1,20 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	calculate_p
+	1
+
+[Mon Jan 21 17:51:52 2019]
+rule calculate_p:
+    input: snakemake_res/exons_genes_upf1xrn1.bed
+    output: snakemake_res/exons_genes_psi_p_upf1xrn1.bed
+    jobid: 0
+    wildcards: sample=upf1xrn1
+
+[Mon Jan 21 17:51:53 2019]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: /Users/danchurova/Documents/PROJECTS/NMD_project/exon_psi_KD/exons_pipeline/.snakemake/log/2019-01-21T175152.148381.snakemake.log

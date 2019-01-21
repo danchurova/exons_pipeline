@@ -11,11 +11,13 @@ import sys
 for line in sys.stdin:
     chrom, gene_start, gene_end, _, _, strand, gene, _, exon_start, exon_end, exon_name, psi, _ = line.split()
     psi = psi[1:-1]
+    #print(gene_start, gene_end, exon_start, exon_end, strand))
+
     gene_start, gene_end, exon_start, exon_end = int(gene_start), int(gene_end), int(exon_start), int(exon_end)
     if strand == '-':
         gene_start, gene_end = gene_end, gene_start
         exon_start, exon_end = exon_end, exon_start
-    p = (exon_start - gene_start)*(gene_end - gene_start) + (exon_end - exon_start)/((gene_end - gene_start)**2)
+    p = round((abs((exon_start - gene_start))*abs((gene_end - gene_start)) + abs((exon_end - exon_start)))/((gene_end - gene_start)**2),3)
     print("\t".join([chrom, str(gene_start), str(gene_end), strand, gene, str(exon_start), str(exon_end), exon_name, psi, str(p)]))
 
 

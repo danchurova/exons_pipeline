@@ -1,0 +1,5 @@
+Building DAG of jobs...
+File path input_data//genes_unique.bed contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+File path input_data//genes_unique.bed contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+Nothing to be done.
+Complete log: /Users/danchurova/Documents/PROJECTS/NMD_project/exon_psi_KD/exons_pipeline/.snakemake/log/2019-01-21T112243.248682.snakemake.log
