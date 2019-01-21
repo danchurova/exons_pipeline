@@ -1,0 +1,48 @@
+Building DAG of jobs...
+File path input_data//genes_unique.bed contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+File path input_data//genes_unique.bed contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	assign_exons_to_genes
+	1	calculate_p
+	1	filter_exons_psi
+	3
+
+[Mon Jan 21 09:37:42 2019]
+rule filter_exons_psi:
+    input: input_data/control.gff
+    output: snakemake_res/exons_psi_control.bed
+    jobid: 2
+    wildcards: sample=control
+
+[Mon Jan 21 09:37:44 2019]
+Finished job 2.
+1 of 3 steps (33%) done
+
+[Mon Jan 21 09:37:44 2019]
+rule assign_exons_to_genes:
+    input: input_data//genes_unique.bed, snakemake_res/exons_psi_control.bed
+    output: snakemake_res/exons_genes_control.bed
+    jobid: 1
+    wildcards: sample=control
+
+Removing temporary output file snakemake_res/exons_psi_control.bed.
+[Mon Jan 21 09:37:45 2019]
+Finished job 1.
+2 of 3 steps (67%) done
+
+[Mon Jan 21 09:37:45 2019]
+rule calculate_p:
+    input: snakemake_res/exons_genes_control.bed
+    output: snakemake_res/exons_genes_psi_p_control.bed
+    jobid: 0
+    wildcards: sample=control
+
+Removing temporary output file snakemake_res/exons_genes_control.bed.
+[Mon Jan 21 09:37:46 2019]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: /Users/danchurova/Documents/PROJECTS/NMD_project/exon_psi_KD/exons_pipeline/.snakemake/log/2019-01-21T093742.294350.snakemake.log

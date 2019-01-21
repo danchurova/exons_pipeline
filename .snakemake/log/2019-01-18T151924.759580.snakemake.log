@@ -1,0 +1,22 @@
+Building DAG of jobs...
+File path input_data//genes_unique.bed contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+File path input_data//genes_unique.bed contains double '/'. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	calculate_p
+	1
+
+[Fri Jan 18 15:19:24 2019]
+rule calculate_p:
+    input: snakemake_res/exons_genes_SRR1275413Aligned.sortedByCoord.out.A07.bed
+    output: snakemake_res/exons_genes_psi_p_SRR1275413Aligned.sortedByCoord.out.A07.bed
+    jobid: 0
+    wildcards: sample=SRR1275413Aligned.sortedByCoord.out.A07
+
+[Fri Jan 18 15:19:26 2019]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: /Users/danchurova/Documents/PROJECTS/NMD_project/exon_psi_KD/exons_pipeline/.snakemake/log/2019-01-18T151924.759580.snakemake.log
